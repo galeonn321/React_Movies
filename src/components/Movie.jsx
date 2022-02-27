@@ -15,7 +15,7 @@ export const Movie = () => {
         const { data } = await axios.get(
           `http://www.omdbapi.com/?apikey=5b6db523&i=${id}`
         );
-        if (data.Error) {
+        if (data.error) {
           setError(true);
           //message
           Swal.fire({
@@ -26,7 +26,7 @@ export const Movie = () => {
         }
         setmovie(data);
       } catch (error) {
-        console.log("error search movie", Error.message);
+        console.log("error search movie", error.message);
       }
     };
     searchMovie();
